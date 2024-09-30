@@ -19,37 +19,6 @@
     <a href="https://trendshift.io/repositories/6387" target="_blank"><img src="https://trendshift.io/api/badge/repositories/6387" alt="d3george%2Fslash-admin | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
 
-**English** | [中文](./README.zh-CN.md)
-
-##  Sponsor
-<div style="display: flex; gap: 50px"> 
-  <img style="width:300px" src="https://d3george.github.io/github-static/pay/weixin.jpg" >
-  <img style="width:280px" src="https://d3george.github.io/github-static/pay/buymeacoffee.png" />
-</div>
-
-## Preview
-+ https://admin.slashspaces.com/
-
-|![login.png](https://d3george.github.io/github-static/slash-admin/login.jpeg)|![login_dark.png](https://d3george.github.io/github-static/slash-admin/login_dark.jpeg)
-| ----------------------------------------------------------------- | ------------------------------------------------------------------- |
-|![analysis.png](https://d3george.github.io/github-static/slash-admin/analysis.png)|![workbench.png](https://d3george.github.io/github-static/slash-admin/workbench.png)
-
-## Features
-
-- Built using React 18 hooks.
-- Powered by Vite for rapid development and hot module replacement.
-- Integrates Ant Design, providing a rich set of UI components and design patterns.
-- Written in TypeScript, offering type safety and an improved development experience.
-- Responsive design, adapting to various screen sizes and devices.
-- Flexible routing configuration, supporting nested routes.
-- Integrated access control based on user roles.
-- Supports internationalization for easy language switching.
-- Includes common admin features like user management, role management, and permission management.
-- Customizable themes and styles to meet your branding needs.
-- Mocking solution based on MSW and Faker.js.
-- State management using Zustand.
-- Data fetching using React-Query.
-
 ## Quick Start
 
 ### Get the Project Code
