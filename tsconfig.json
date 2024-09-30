@@ -30,7 +30,7 @@
     "useUnknownInCatchVariables": false,
 
     // https://vitejs.dev/guide/features#client-types
-    "types": ["vite/client", "vite-plugin-svg-icons/client"],
+    "types": ["vite/client"],
 
     "baseUrl": ".",
     /* alias */

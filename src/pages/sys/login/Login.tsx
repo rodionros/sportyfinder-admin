@@ -31,7 +31,7 @@ function Login() {
           background: bg,
         }}
       >
-        <img className="max-w-[480px] xl:max-w-[560px]" src={Logo} alt="" />
+        <img className="max-w-[80px] xl:max-w-[160px]" src={Logo} alt="" />
         <div className="text-3xl font-bold leading-normal lg:text-4xl xl:text-5xl">
           Sportyfinder Admin
         </div>
