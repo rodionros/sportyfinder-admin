@@ -9,7 +9,7 @@ import ru_RU from './lang/ru_RU';
 
 import { LocalEnum, StorageEnum } from '#/enum';
 
-const defaultLng = getStringItem(StorageEnum.I18N) || (LocalEnum.en_US as string);
+const defaultLng = getStringItem(StorageEnum.I18N) || (LocalEnum.ru_RU as string);
 i18n
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
