@@ -51,7 +51,7 @@ export default function BannerCard() {
         <button
           className="font-mediumtext-black m-auto flex items-center justify-center rounded-lg px-2 py-1 shadow-none md:m-0"
           style={{ backgroundColor: themeToken.colorPrimary, color: '#fff' }}
-          onClick={() => window.open('https://discord.gg/fXemAXVNDa')}
+          onClick={() => window.open('https://t.me/sportyfinder')}
         >
           <Iconify icon="streamline:telegram-solid" size={24} />
           <span className="ml-2 font-black">{t('common.bannerCard.joinTelegram')}</span>
