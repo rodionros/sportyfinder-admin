@@ -127,7 +127,7 @@ function NoticeTab() {
           <div>
             <span className="font-medium">{faker.person.fullName()}</span>
             <span className="text-xs font-light"> mentioned you in</span>
-            <span className="font-medium">Slash Admin</span>
+            <span className="font-medium">Sportyfinder Admin</span>
           </div>
           <span className="text-xs font-light opacity-60">1 days ago</span>
           <div className="mt-2">
