@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 import Color from 'color';
+import { useTranslation } from 'react-i18next';
 
 import Character3 from '@/assets/images/characters/character_3.png';
 import { Iconify } from '@/components/icon';
@@ -9,6 +10,7 @@ import { useThemeToken } from '@/theme/hooks';
 export default function BannerCard() {
   const { username } = useUserInfo();
   const themeToken = useThemeToken();
+  const { t } = useTranslation();
 
   const bg = `linear-gradient(135deg, ${Color(themeToken.colorPrimaryHover).alpha(0.2)}, ${Color(
     themeToken.colorPrimary,
@@ -26,15 +28,14 @@ export default function BannerCard() {
           className="mt-4 text-lg font-semibold md:text-xl"
           style={{ color: themeToken.colorPrimaryActive }}
         >
-          <h4>Welcome back 👋 </h4>
+          <h4>{t('common.bannerCard.welcome')} 👋 </h4>
           <h4>{username}</h4>
         </div>
         <div
           style={{ color: themeToken.colorPrimaryTextActive }}
           className="mx-auto mb-6 mt-4 max-w-sm text-sm opacity-80 md:mx-0"
         >
-          Welcome to join the Discord channel to discuss everything about Slash Admin, or you can
-          visite my blog:
+          {t('common.bannerCard.welcomeMessage')}
           <div>
             <a
               href="https://blog.slashspaces.com"
@@ -43,7 +44,7 @@ export default function BannerCard() {
               style={{ color: themeToken.colorPrimaryTextActive }}
               rel="noreferrer"
             >
-              👉 https://blog.slashspaces.com
+              👉 https://sportyfinder.ru
             </a>
           </div>
         </div>
@@ -52,8 +53,8 @@ export default function BannerCard() {
           style={{ backgroundColor: themeToken.colorPrimary, color: '#fff' }}
           onClick={() => window.open('https://discord.gg/fXemAXVNDa')}
         >
-          <Iconify icon="carbon:logo-discord" size={24} />
-          <span className="ml-2 font-black">Join Discord</span>
+          <Iconify icon="streamline:telegram-solid" size={24} />
+          <span className="ml-2 font-black">{t('common.bannerCard.joinTelegram')}</span>
         </button>
       </Col>
 

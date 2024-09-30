@@ -29,6 +29,8 @@ export function getRoutesFromModules() {
     const modList = Array.isArray(mod) ? [...mod] : [mod];
     menuModules.push(...modList);
   });
+
+  console.log(menuModules);
   return menuModules;
 }
 

@@ -28,17 +28,12 @@ export enum ThemeLayout {
 }
 
 export enum ThemeColorPresets {
-  Default = 'default',
-  Cyan = 'cyan',
   Purple = 'purple',
-  Blue = 'blue',
-  Orange = 'orange',
-  Red = 'red',
 }
 
 export enum LocalEnum {
   en_US = 'en_US',
-  zh_CN = 'zh_CN',
+  ru_RU = 'ru_RU',
 }
 
 export enum MultiTabOperation {

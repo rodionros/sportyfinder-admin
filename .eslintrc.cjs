@@ -1,42 +1,39 @@
 module.exports = {
-  root: true, // 表示当前目录即为根目录，ESLint 规则将被限制到该目录下
+  root: true,
   env: { browser: true, es2020: true, node: true },
-  /* 解析器 */
-  parser: '@typescript-eslint/parser', // 指定ESLint解析器
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.eslint.json',
     ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true, // 启用JSX
+      jsx: true,
     },
     extraFileExtensions: ['.json'],
   },
   settings: {
-    // 识别 @ # alias
     'import/resolver': {
       alias: {
         map: [
           ['@', './src'],
           ['#', './types'],
+          ['msw/browser', './node_modules/msw/browser']
         ],
         extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       },
     },
   },
-  /* ESLint 中基础配置需要继承的配置 */
   extends: [
     'airbnb',
     'airbnb-typescript',
     'airbnb/hooks',
-    'plugin:@typescript-eslint/recommended', // 使用@typescript-eslint/eslint-plugin推荐的规则
+    'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'prettier', // 增加 prettier 相关的校验规则
-    'plugin:prettier/recommended', // 开启 Prettier 插件推荐的规则
+    'prettier',
+    'plugin:prettier/recommended',
   ],
-  /* ESLint文件所依赖的插件 */
   plugins: [
     '@typescript-eslint',
     'prettier',
@@ -46,12 +43,6 @@ module.exports = {
     'import',
     'unused-imports',
   ],
-  /**
-   * 定义规则
-   * "off" 或 0 - 关闭规则
-   * "warn" 或 1 - 开启规则，使用警告级别的错误：warn (不会导致程序退出)
-   * "error" 或 2 - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)
-   */
   rules: {
     semi: ['error', 'always'],
     'no-console': 'off',
@@ -67,7 +58,6 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
 
-    // 不用手动引入react
     'react/react-in-jsx-scope': 'off',
     'react/button-has-type': 'off',
     'react/require-default-props': 'off',
@@ -84,11 +74,11 @@ module.exports = {
       'warn',
       {
         groups: [
-          'builtin', // Node.js内置模块
-          'external', // 第三方模块
-          'internal', // 应用程序内部的模块
-          'parent', // 父级目录中导入的模块
-          ['sibling', 'index'], // 具有相同或更高目录的兄弟模块
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          ['sibling', 'index'],
           'object',
           'type',
         ],
@@ -110,10 +100,10 @@ module.exports = {
             group: 'sibling',
           },
         ],
-        'newlines-between': 'always', // 在组之间插入空行
+        'newlines-between': 'always',
         pathGroupsExcludedImportTypes: ['sibling', 'index'],
         warnOnUnassignedImports: true,
-        alphabetize: { order: 'asc', caseInsensitive: true }, // 对于每个组，按字母表顺序排序。
+        alphabetize: { order: 'asc', caseInsensitive: true },
       },
     ],
 

@@ -1,7 +1,6 @@
-import { Alert, Button, Checkbox, Col, Divider, Form, Input, Row } from 'antd';
+import { Alert, Button, Checkbox, Col, Form, Input, Row } from 'antd';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AiFillGithub, AiFillGoogleCircle, AiFillWechat } from 'react-icons/ai';
 
 import { DEFAULT_USER, TEST_USER } from '@/_mock/assets';
 import { SignInReq } from '@/api/services/userService';
@@ -109,36 +108,6 @@ function LoginForm() {
             {t('sys.login.loginButton')}
           </Button>
         </Form.Item>
-
-        <Row align="middle" gutter={8}>
-          <Col span={9} flex="1">
-            <Button
-              className="w-full !text-sm"
-              onClick={() => setLoginState(LoginStateEnum.MOBILE)}
-            >
-              {t('sys.login.mobileSignInFormTitle')}
-            </Button>
-          </Col>
-          <Col span={9} flex="1">
-            <Button
-              className="w-full !text-sm"
-              onClick={() => setLoginState(LoginStateEnum.QR_CODE)}
-            >
-              {t('sys.login.qrSignInFormTitle')}
-            </Button>
-          </Col>
-          <Col span={6} flex="1" onClick={() => setLoginState(LoginStateEnum.REGISTER)}>
-            <Button className="w-full !text-sm">{t('sys.login.signUpFormTitle')}</Button>
-          </Col>
-        </Row>
-
-        <Divider className="!text-xs">{t('sys.login.otherSignIn')}</Divider>
-
-        <div className="flex cursor-pointer justify-around text-2xl">
-          <AiFillGithub />
-          <AiFillWechat />
-          <AiFillGoogleCircle />
-        </div>
       </Form>
     </>
   );

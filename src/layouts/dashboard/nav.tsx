@@ -45,8 +45,9 @@ export default function Nav(props: Props) {
     return routeToMenuFn(menuRoutes);
   }, [routeToMenuFn, permissionRoutes]);
 
-  // 获取拍平后的路由菜单
   const flattenedRoutes = useFlattenedRoutes();
+
+  console.log(menuList);
 
   /**
    * state
@@ -126,7 +127,7 @@ export default function Nav(props: Props) {
           {themeLayout !== ThemeLayout.Mini && (
             <m.div variants={slideInLeft}>
               <span className="ml-2 text-xl font-bold" style={{ color: colorPrimary }}>
-                Slash Admin
+                Sportyfinder
               </span>
             </m.div>
           )}

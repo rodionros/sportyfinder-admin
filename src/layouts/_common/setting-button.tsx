@@ -8,7 +8,6 @@ import { Button, Card, Drawer, Switch, Tooltip } from 'antd';
 import Color from 'color';
 import { m } from 'framer-motion';
 import { CSSProperties, useState } from 'react';
-import { MdCircle } from 'react-icons/md';
 import screenfull from 'screenfull';
 
 import CyanBlur from '@/assets/images/background/cyan-blur.png';
@@ -16,10 +15,9 @@ import RedBlur from '@/assets/images/background/red-blur.png';
 import { varHover } from '@/components/animate/variants/action';
 import { IconButton, SvgIcon } from '@/components/icon';
 import { useSettingActions, useSettings } from '@/store/settingStore';
-import { colorPrimarys } from '@/theme/antd/theme';
 import { useThemeToken } from '@/theme/hooks';
 
-import { ThemeColorPresets, ThemeLayout, ThemeMode } from '#/enum';
+import { ThemeLayout, ThemeMode } from '#/enum';
 
 /**
  * App Setting
@@ -30,21 +28,13 @@ export default function SettingButton() {
     useThemeToken();
 
   const settings = useSettings();
-  const { themeMode, themeColorPresets, themeLayout, themeStretch, breadCrumb, multiTab } =
-    settings;
+  const { themeMode, themeLayout, themeStretch, breadCrumb, multiTab } = settings;
   const { setSettings } = useSettingActions();
 
   const setThemeMode = (themeMode: ThemeMode) => {
     setSettings({
       ...settings,
       themeMode,
-    });
-  };
-
-  const setThemeColorPresets = (themeColorPresets: ThemeColorPresets) => {
-    setSettings({
-      ...settings,
-      themeColorPresets,
     });
   };
 
@@ -122,7 +112,7 @@ export default function SettingButton() {
       </div>
       <Drawer
         placement="right"
-        title="Settings"
+        title="Настройки"
         onClose={() => setDrawerOpen(false)}
         open={drawerOpen}
         closable={false}
@@ -147,12 +137,12 @@ export default function SettingButton() {
                     color={colorPrimary}
                     className="!m-0"
                   />
-                  <span className="ml-2">Exit FullScreen</span>
+                  <span className="ml-2">Выйти из режима</span>
                 </>
               ) : (
                 <>
                   <SvgIcon icon="ic-settings-fullscreen" className="!m-0" />
-                  <span className="ml-2 text-gray">FullScreen</span>
+                  <span className="ml-2 text-gray">Полноэкранный режим</span>
                 </>
               )}
             </div>
@@ -163,7 +153,7 @@ export default function SettingButton() {
           {/* theme mode */}
           <div>
             <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
-              Mode
+              Тема
             </div>
             <div className="flex flex-row gap-4">
               <Card
@@ -192,7 +182,7 @@ export default function SettingButton() {
           {/* theme layout */}
           <div>
             <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
-              Layout
+              Лейаут
             </div>
             <div className="grid grid-cols-3 gap-4">
               <Card
@@ -307,8 +297,8 @@ export default function SettingButton() {
           {/* theme stretch */}
           <div>
             <div className=" mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
-              <span className="mr-2">Stretch</span>
-              <Tooltip title="Only available at large resolutions > 1600px (xl)">
+              <span className="mr-2">Растянуть контент</span>
+              <Tooltip title="Доступно только при разрешении экрана > 1600px (xl)">
                 <QuestionCircleOutlined />
               </Tooltip>
             </div>
@@ -353,38 +343,17 @@ export default function SettingButton() {
             </Card>
           </div>
 
-          {/* theme presets */}
-          <div>
-            <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
-              Presets
-            </div>
-            <div className="grid grid-cols-3 gap-x-4 gap-y-3">
-              {Object.entries(colorPrimarys).map(([preset, color]) => (
-                <Card
-                  key={preset}
-                  className="flex h-14 w-full cursor-pointer items-center justify-center"
-                  style={{ backgroundColor: themeColorPresets === preset ? `${color}14` : '' }}
-                  onClick={() => setThemeColorPresets(preset as ThemeColorPresets)}
-                >
-                  <div style={{ color }}>
-                    <MdCircle style={{ fontSize: themeColorPresets === preset ? 24 : 12 }} />
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-
           {/* Page config */}
           <div>
             <div className="mb-3 text-base font-semibold" style={{ color: colorTextSecondary }}>
-              Page
+              Настройки страницы
             </div>
             <div className="flex flex-col gap-2">
               <div
                 className="flex items-center justify-between"
                 style={{ color: colorTextTertiary }}
               >
-                <div>BreadCrumb</div>
+                <div>Хлебные крошки</div>
                 <Switch
                   size="small"
                   checked={breadCrumb}
@@ -395,7 +364,7 @@ export default function SettingButton() {
                 className="flex items-center justify-between"
                 style={{ color: colorTextTertiary }}
               >
-                <div>Multi Tab</div>
+                <div>Мультиокна</div>
                 <Switch
                   size="small"
                   checked={multiTab}
